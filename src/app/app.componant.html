@@ -1,16 +1,25 @@
 <h1>Liste des Pokemons</h1>
 <input #input (keyup.enter)="SelectPokemon(input.value)" type="number">
-<p *ngIf="pokemonSelected">
-    {{pokemonSelected?.name}}
-</p>
+<div class="global">
+    <div *ngIf="pokemonSelected" class="ntm">
+        <img src="{{pokemonSelected?.picture}}" alt="">
+        <div class="tqt">
+            <p class="name">{{pokemonSelected?.name}}</p>
+            <p>{{pokemonSelected?.created}}</p>
+        </div>
+    </div>
+</div>
 <p *ngIf="!pokemonSelected">
     Aucun pokémon trouvé !
 </p>
-<!-- <p>{{pokemon[0].name}}</p>
-<p>{{pokemon[1].name}}</p>
-<p>{{pokemon[2].name}}</p>
-<p>{{pokemon[3].name}}</p>
-<p>{{pokemon[4].name}}</p>
-<p>{{pokemon[5].name}}</p>
-<p>{{pokemon[6].name}}</p>
-<p>{{pokemon[7].name}}</p> -->
+
+<p>Liste de tous les Pokémons :</p>
+<div class="global">
+    <div *ngFor="let poke of pokemon" class="ntm">
+        <img src="{{poke.picture}}" alt="">
+        <div class="tqt">
+            <p class="name">{{poke.name}}</p>
+            <p>{{poke.created}}</p>
+        </div>
+    </div>
+</div>
