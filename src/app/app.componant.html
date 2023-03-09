@@ -1,11 +1,14 @@
 <h1>Liste des Pokemons</h1>
 <input #input (keyup.enter)="SelectPokemon(input.value)" type="number">
 <div class="global">
-    <div *ngIf="pokemonSelected" class="ntm">
+    <div *ngIf="pokemonSelected" class="ntm" appBorderCard>
         <img src="{{pokemonSelected?.picture}}" alt="">
         <div class="tqt">
-            <p class="name">{{pokemonSelected?.name}}</p>
-            <p>{{pokemonSelected?.created}}</p>
+            <p class="name">{{pokemonSelected.name}}</p>
+            <p><small>{{pokemonSelected.created | date:"dd/MM/yyyy"}}</small></p>
+            <span *ngFor="let type of pokemonSelected.types" class="{{type | pokemonTypeColor}}">
+                {{type}}
+            </span>
         </div>
     </div>
 </div>
@@ -15,11 +18,14 @@
 
 <p>Liste de tous les Pokémons :</p>
 <div class="global">
-    <div *ngFor="let poke of pokemon" class="ntm">
+    <div *ngFor="let poke of pokemon" class="ntm" pkm appBorderCard> 
         <img src="{{poke.picture}}" alt="">
         <div class="tqt">
             <p class="name">{{poke.name}}</p>
-            <p>{{poke.created}}</p>
+            <p><small>{{poke.created | date:"dd/MM/yyyy"}}</small></p>
+            <span *ngFor="let type of poke.types" class="{{type | pokemonTypeColor}}">
+                {{type}}
+            </span>
         </div>
     </div>
 </div>
