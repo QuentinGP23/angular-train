@@ -1,5 +1,4 @@
-<h1>Liste des Pokemons</h1>
-<input #input (keyup.enter)="SelectPokemon(input.value)" type="number">
+<!-- <input #input (keyup.enter)="SelectPokemon(input.value)" type="number">
 <div class="global">
     <div *ngIf="pokemonSelected" class="ntm" appBorderCard>
         <img src="{{pokemonSelected?.picture}}" alt="">
@@ -14,18 +13,6 @@
 </div>  
 <p *ngIf="!pokemonSelected">
     Aucun pokémon trouvé !
-</p>
+</p> -->
 
-<p>Liste de tous les Pokémons :</p>
-<div class="global">
-    <div *ngFor="let poke of pokemon" class="ntm" pkm appBorderCard> 
-        <img src="{{poke.picture}}" alt="">
-        <div class="tqt">
-            <p class="name">{{poke.name}}</p>
-            <p><small>{{poke.created | date:"dd/MM/yyyy"}}</small></p>
-            <span *ngFor="let type of poke.types" class="{{type | pokemonTypeColor}}">
-                {{type}}
-            </span>
-        </div>
-    </div>
-</div>
+<router-outlet></router-outlet>
