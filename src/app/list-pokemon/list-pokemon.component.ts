@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 })
 
 export class ListPokemonComponent{
-  constructor(private router: Router){}
   pokemon:Pokemon[] = POKEMONS;
+  constructor(private router: Router){}
 }
