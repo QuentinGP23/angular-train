@@ -1,5 +1,5 @@
 <div class="global">
-    <div *ngFor="let poke of pokemon" class="ntm" pkm appBorderCard> 
+    <div *ngFor="let poke of pokemon" class="ntm" (click)="goToPokemon(poke)" pkm appBorderCard> 
         <img src="{{poke.picture}}" alt="">
         <div class="tqt">
             <p class="name">{{poke.name}}</p>
